@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Rolling Dice</title>
+</head>
+<body>
+<nav th:replace="/fragments/partials.html :: navbar"></nav>
+<div class="container">
+  <h5>Guess a number between 1 - 6</h5>
+  <ul>
+    <li class="m-3"><a href="/roll-dice/1">Number 1</a></li>
+    <li class="m-3"><a href="/roll-dice/2">Number 2</a></li>
+    <li class="m-3"><a href="/roll-dice/3">Number 3</a></li>
+    <li class="m-3"><a href="/roll-dice/4">Number 4</a></li>
+    <li class="m-3"><a href="/roll-dice/5">Number 5</a></li>
+    <li class="m-3"><a href="/roll-dice/6">Number 6</a></li>
+  </ul>
+
+  <p>The random number is: <span th:text="${randomNum}"></span></p>
+  <p>Your number is: <span th:text="${num}"></span></p>
+  <p th:if="${result == true}">You guess correctly!</p>
+  <p th:if="${result == false}">You guess wrong!</p>
+</div>
+
+<footer th:replace="/fragments/navbar_footer.html :: footer"></footer>
+
+</body>
+</html>
