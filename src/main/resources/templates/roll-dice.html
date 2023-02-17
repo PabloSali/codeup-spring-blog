@@ -19,11 +19,11 @@
 
   <p>The random number is: <span th:text="${randomNum}"></span></p>
   <p>Your number is: <span th:text="${num}"></span></p>
-  <p th:if="${result == true}">You guess correctly!</p>
-  <p th:if="${result == false}">You guess wrong!</p>
+  <p th:if="${result == true}">You guessed correctly!</p>
+  <p th:if="${result == false}">You guessed wrong!</p>
 </div>
 
-<footer th:replace="/fragments/navbar_footer.html :: footer"></footer>
+<!--<footer th:replace="/fragments/navbar_footer.html :: footer"></footer>-->
 
 </body>
 </html>

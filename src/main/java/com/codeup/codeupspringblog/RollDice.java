@@ -14,7 +14,7 @@ public class RollDice {
 
     @GetMapping("/roll-dice/{num}")
     public String userInput(@PathVariable int num, Model model) {
-        int randomNum = (int) Math.floor(Math.random() * 7);
+        int randomNum = (int) Math.floor(Math.random() * 6) + 1;
 
         boolean result = num == randomNum;
 
