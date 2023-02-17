@@ -2,6 +2,7 @@ package com.codeup.codeupspringblog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 @Controller
 
@@ -18,16 +19,9 @@ public class HelloController {
         return "blue";
     }
 
-//    @GetMapping
-//    @PostMapping
-//    @PutMapping
-//    @DeleteMapping
-//    @RequestMapping
-
     @GetMapping("/hello/{name}")
-    @ResponseBody
-    public String sayHello(@PathVariable String name) {
-        return "<h1> Hello " + name + "! </h1>";
+    public String sayHello(@PathVariable String name, Model model) {
+        model.addAttribute("name", name);
+        return "hello";
     }
-
 }
