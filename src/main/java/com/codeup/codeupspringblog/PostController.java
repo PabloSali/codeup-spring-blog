@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 
 public class PostController {
-    @GetMapping("/post")
+    @GetMapping("posts/index")
     @ResponseBody
     public String viewAllPosts(){
         return "<h1> All Posts </h1>";
     }
 
-    @GetMapping("/post/{id}")
+    @GetMapping("posts/show")
     @ResponseBody
     public String viewIndPosts(){
         return "<h1> Individual Posts </h1>";

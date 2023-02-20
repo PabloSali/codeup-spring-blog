@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Show</title>
 </head>
 <body>
+<nav th:replace="/fragments/partials.html :: navbar"></nav>
+
+<div class="container">
+    <h1 th:text="${post.title}"></h1>
+    <p th:text="${post.body}"></p>
+    <p>Post ID: <span th:text="${post.id}"></span></p>
+    <p th:text="${post.user.email}"></p>
+</div>
 
 </body>
 </html>
