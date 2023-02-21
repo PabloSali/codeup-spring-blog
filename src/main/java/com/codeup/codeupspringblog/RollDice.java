@@ -24,5 +24,4 @@ public class RollDice {
 
         return "roll-dice";
     }
-
 }
