@@ -1,5 +1,6 @@
 package com.codeup.codeupspringblog.controllers;
 
+import com.codeup.codeupspringblog.repositories.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 
 public class PostController {
+
+    private PostRepository postDao;
+
+    public PostRepository getPostDao() { return postDao; }
+
+    public void setPostDao(PostRepository postDao) { this.postDao = postDao; }
+
     @GetMapping("posts/index")
     @ResponseBody
     public String viewAllPosts(){
