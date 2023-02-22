@@ -2,6 +2,7 @@ package com.codeup.codeupspringblog.models;
 import jakarta.persistence.*;
 
 import javax.annotation.processing.Generated;
+import java.util.List;
 
 @Entity
 @Table(name="ads")
@@ -16,6 +17,10 @@ public class Ad {
     @Column(nullable = false)
     private String description;
 
+// ---  Relationship Lecture
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ad")
+    private List<AdImage> images;
+// ---
     public Ad(){};
 
     public Ad(long id, String title, String description){ this.id = id; this.title = title; this.description = description; }
