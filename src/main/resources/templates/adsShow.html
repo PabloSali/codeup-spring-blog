@@ -5,6 +5,13 @@
     <title>Repo Lecture</title>
 </head>
 <body>
-  <h1> Hello, <span th:text="${ads}">World</span>! </h1>
+  <h1> Here are all the posts: </h1>
+  <div th:each="ad:${ads}">
+    <img th:each="image:${ad.getImage()}" th:src="@{${image.imageURL}" alt="ad image">
+    <h1 th:text="${ad.title}"></h1>
+    <p th:text="${ad.description}"></p>
+
+  </div>
+      <span th:text="${ads}">World</span>!
 </body>
 </html>

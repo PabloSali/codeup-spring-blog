@@ -15,6 +15,14 @@ public class AdImage {
     @JoinColumn(name = "ad_id")
     private Ad ad;
 
+    public Ad getAd() {
+        return ad;
+    }
+
+    public void setAd(Ad ad) {
+        this.ad = ad;
+    }
+
     public AdImage(){}
 
     public long getId() {
