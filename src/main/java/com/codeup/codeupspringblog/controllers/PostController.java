@@ -16,6 +16,9 @@ public class PostController {
 
     public void setPostDao(PostRepository postDao) { this.postDao = postDao; }
 
+    public PostController(){
+
+    }
     @GetMapping("posts/index")
     @ResponseBody
     public String viewAllPosts(){
