@@ -16,9 +16,8 @@ public class PostController {
 
     public void setPostDao(PostRepository postDao) { this.postDao = postDao; }
 
-    public PostController(){
+    public PostController(){}
 
-    }
     @GetMapping("posts/index")
     @ResponseBody
     public String viewAllPosts(){
@@ -30,16 +29,39 @@ public class PostController {
     public String viewIndPosts(){
         return "<h1> Individual Posts </h1>";
     }
-
+//------------- Create ------------------------
     @GetMapping("/post/create")
     @ResponseBody
-    public String getCreatePost(){
-        return "<h1> Create Post Get </h1>";
+    public String createPostForm(Model model) {
+        model.addAttribute("post", new Post());
+        return "posts/create";
     }
 
     @PostMapping("/post/create")
     @ResponseBody
-    public String postCreatePost(){
-        return "<h1> Create Post Post </h1>";
+    public String createPost(@ModelAttribute Post post) {
+        User user = userDao.getReferenceById(1L);
+        post.setUser(user);
+        postDao.save(post);
+        return "redirect:/posts";
     }
+//-------------- Edit --------------------------
+    @GetMapping("/post/{id}/edit")
+    @ResponseBody
+    public String editPost(@ModelAttribute Post post) {
+        User user = userDao.getReferenceById(1L);
+        post.setUser(user);
+        postDao.save(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/post/edit")
+    @ResponseBody
+    public String editPost(@ModelAttribute Post post) {
+        User user = userDao.getReferenceById(1L);
+        post.setUser(user);
+        postDao.save(post);
+        return "redirect:/posts";
+    }
+
 }
