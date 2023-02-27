@@ -11,12 +11,9 @@ public class AdCategory {
     private long id;
     @Column(length = 100)
     private String name;
-
     @ManyToMany(mappedBy = "categories")
     private List<Ad> ads;
-
     public AdCategory(){};
-
     public AdCategory(String name, List<Ad> ads){
         this.name = name;
         this.ads = ads;
@@ -25,23 +22,16 @@ public class AdCategory {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
-
-    public String getName() {
-        return name;
-    }
-
+    public String getName() { return name; }
     public void setName(String name) {
         this.name = name;
     }
-
     public List<Ad> getAds() {
         return ads;
     }
-
     public void setAds(List<Ad> ads) {
         this.ads = ads;
     }
