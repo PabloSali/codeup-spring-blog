@@ -2,9 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Create</title>
 </head>
 <body>
+<form th:method="POST" th:action="@{/ads/create}" th:object="${newAd}">
+    <h1>Create New Ad</h1>
+    <label for="title">Title: </label>
+    <input type="text" th:field="*{title}" id="title">
+    <label for="description">Description: </label>
+    <textarea id="description" th:field="*{description}" rows="10" cols="20"></textarea>
+    <button type="submit">Create Post</button>
+</form>
 
+<form th:action="@{/logout}" th:method="POST">
+    <button type="submit">Logout</button>
+</form>
 </body>
 </html>

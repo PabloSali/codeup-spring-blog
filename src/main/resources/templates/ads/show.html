@@ -2,9 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Individual Post</title>
+    <th:block th:include="partials/partials.html :: styles"></th:block>
 </head>
 <body>
-
+<nav th:replace="partials/partials.html :: navbar"></nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img th:each="image : ${ad.images}" th:src="@{${image.imageURL}}">
+            <h1 th:text="${ad.title}"></h1>
+            <p th:text="${ad.description}"></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
