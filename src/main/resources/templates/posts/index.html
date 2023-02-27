@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All Posts</title>
 </head>
 <body>
-
+    <h1>Here are all the posts: </h1>
+    <div th:each="post : ${allPosts}">
+        <h1 th:text="${post.title}"></h1>
+        <p th:text="${post.body}"></p>
+    </div>
 </body>
 </html>

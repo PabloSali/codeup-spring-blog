@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show</title>
+    <title>Individual Post</title>
 </head>
 <body>
-<nav th:replace="/partials/partials.html :: navbar"></nav>
-
-<div class="container">
-    <h1 th:text="${post.title}"></h1>
-    <p th:text="${post.body}"></p>
-    <p>Post ID: <span th:text="${post.id}"></span></p>
-    <p th:text="${post.user.email}"></p>
-</div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 th:text="${post.title}"></h1>
+                <p th:text="${post.body}"></p>
+                <small th:text="${'User email: ' + post.user.email}"></small>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
